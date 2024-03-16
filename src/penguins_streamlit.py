@@ -13,6 +13,12 @@ st.title(body="Penguin Classifier")
 st.markdown(body="""This app uses 6 inputs to predict the species of penguin using 
             a model built on the Palmer's Penguins dataset. Use the form below to get started!""")
 
+# Ask for password
+streamlit_password = st.text_input(label="What is the password?")
+
+if streamlit_password != "Halflife$2$":
+    st.stop()
+
 # Load the data
 penguin_file = "./data/penguins.csv"
 penguin_df = pd.read_csv(filepath_or_buffer=penguin_file)
