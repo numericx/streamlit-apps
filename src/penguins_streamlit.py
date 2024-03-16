@@ -16,7 +16,7 @@ st.markdown(body="""This app uses 6 inputs to predict the species of penguin usi
 # Ask for password
 streamlit_password = st.text_input(label="What is the password?")
 
-if streamlit_password != "Halflife$2$":
+if streamlit_password != st.secrets["STREAMLIT_PASSWORD"]:
     st.stop()
 
 # Load the data
